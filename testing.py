@@ -4,6 +4,7 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 import time
 import re
+import csv
 
 # Chrome 드라이버 경로 설정
 chrome_driver_path = './chromedriver_win64/chromedriver.exe'  
@@ -23,7 +24,6 @@ with open(db_path_cp, "r", encoding="utf-8") as file:
     check_point = content
 
 chrome_options = Options()
-#chrome_options.add_argument("--headless")  # 브라우저 창을 띄우지 않음
 
 # 드라이버 서비스 생성 및 브라우저 실행
 service = Service(chrome_driver_path)
@@ -96,7 +96,7 @@ try:
                 boj_problem = row.find_elements(By.TAG_NAME, 'td')[2].text[1:]
                 boj_tier_elem = row.find_element(By.CSS_SELECTOR, "td:nth-child(3) > img")
                 boj_tier = boj_tier_elem.get_attribute("src").split("/")[-1].replace(".svg", "")
-                elem = driver.find_element(By.CSS_SELECTOR, "a.real-time-update.show-date")
+                elem = row.find_element(By.CSS_SELECTOR, "a.real-time-update.show-date")
                 data_title = elem.get_attribute("data-original-title")
 
                 # regex로 년 월 일 추출
@@ -118,6 +118,22 @@ try:
     
     with open(db_path_cp, "w", encoding="utf-8") as file:
         file.write(first_elem)
+
+    csv_file_path = db_path+'/data.csv'
+    with open(csv_file_path, mode='w', newline='', encoding='utf-8') as csvfile:
+        writer = csv.writer(csvfile)
+
+        writer.writerow(['boj_id', 'boj_problem', 'boj_tier', 'year', 'month', 'day'])
+        
+        for data in save_data:
+            writer.writerow([
+                data.id,
+                data.problem,
+                data.tier,
+                data.date.year,
+                data.date.month,
+                data.date.day
+            ])
 
 finally:
     driver.quit()
