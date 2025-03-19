@@ -1,0 +1,65 @@
+{
+    "start_tier": 10,
+    "curr_tier": 10,
+    "day": [
+        {
+            "date": "2025-02-07",
+            "problems": [
+                {
+                    "problem_id": "16960",
+                    "difficulty": "7"
+                }
+            ]
+        },
+        {
+            "date": "2025-02-04",
+            "problems": [
+                {
+                    "problem_id": "1463",
+                    "difficulty": "8"
+                },
+                {
+                    "problem_id": "1002",
+                    "difficulty": "8"
+                }
+            ]
+        },
+        {
+            "date": "2025-02-03",
+            "problems": [
+                {
+                    "problem_id": "11399",
+                    "difficulty": "7"
+                },
+                {
+                    "problem_id": "1764",
+                    "difficulty": "7"
+                }
+            ]
+        }
+    ],
+    "top10": [
+        {
+            "problem_id": "16960",
+            "difficulty": "7"
+        },
+        {
+            "problem_id": "1463",
+            "difficulty": "8"
+        },
+        {
+            "problem_id": "1002",
+            "difficulty": "8"
+        },
+        {
+            "problem_id": "11399",
+            "difficulty": "7"
+        },
+        {
+            "problem_id": "1764",
+            "difficulty": "7"
+        }
+    ],
+    "longest_streak": 2,
+    "current_streak": 1
+}

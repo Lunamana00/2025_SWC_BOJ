@@ -1,0 +1,23 @@
+{
+    "start_tier": 10,
+    "curr_tier": 11,
+    "day": [
+        {
+            "date": "2025-02-26",
+            "problems": [
+                {
+                    "problem_id": "1926",
+                    "difficulty": "10"
+                }
+            ]
+        }
+    ],
+    "top10": [
+        {
+            "problem_id": "1926",
+            "difficulty": "10"
+        }
+    ],
+    "longest_streak": 1,
+    "current_streak": 1
+}
