@@ -81,9 +81,10 @@ try:
 
         for row in table_rows:
 
-            if row.find_element(By.CLASS_NAME, 'result').text=='맞았습니다!!':
+            if row.find_element(By.CLASS_NAME, 'result').text in ['맞았습니다!!', '100점']:
 
                 boj_num = row.find_elements(By.TAG_NAME, 'td')[0].text
+                print(boj_num)
                 elem_read = boj_num
 
                 if first_elem == 0:
