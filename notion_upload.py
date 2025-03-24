@@ -6,65 +6,65 @@ from datetime import datetime, timedelta
 
 def map_tier(numeric_tier):
     if numeric_tier == 1:
-        return "Bronze I"
+        return "Bronze V"
     elif numeric_tier == 2:
-        return "Bronze II"
+        return "Bronze IV"
     elif numeric_tier == 3:
         return "Bronze III"
     elif numeric_tier == 4:
-        return "Bronze IV"
+        return "Bronze II"
     elif numeric_tier == 5:
-        return "Bronze V"
+        return "Bronze I"
     elif numeric_tier == 6:
-        return "Silver I"
+        return "Silver V"
     elif numeric_tier == 7:
-        return "Silver II"
+        return "Silver IV"
     elif numeric_tier == 8:
         return "Silver III"
     elif numeric_tier == 9:
-        return "Silver IV"
+        return "Silver II"
     elif numeric_tier == 10:
-        return "Silver V"
+        return "Silver I"
     elif numeric_tier == 11:
-        return "Gold I"
+        return "Gold V"
     elif numeric_tier == 12:
-        return "Gold II"
+        return "Gold IV"
     elif numeric_tier == 13:
         return "Gold III"
     elif numeric_tier == 14:
-        return "Gold IV"
+        return "Gold II"
     elif numeric_tier == 15:
-        return "Gold V"
+        return "Gold I"
     elif numeric_tier == 16:
-        return "Platinum I"
+        return "Platinum V"
     elif numeric_tier == 17:
-        return "Platinum II"
+        return "Platinum IV"
     elif numeric_tier == 18:
         return "Platinum III"
     elif numeric_tier == 19:
-        return "Platinum IV"
+        return "Platinum II"
     elif numeric_tier == 20:
-        return "Platinum V"
+        return "Platinum I"
     elif numeric_tier == 21:
-        return "Diamond I"
+        return "Diamond V"
     elif numeric_tier == 22:
-        return "Diamond II"
+        return "Diamond IV"
     elif numeric_tier == 23:
         return "Diamond III"
     elif numeric_tier == 24:
-        return "Diamond IV"
+        return "Diamond II"
     elif numeric_tier == 25:
-        return "Diamond V"
+        return "Diamond I"
     elif numeric_tier == 26:
-        return "Ruby I"
+        return "Ruby V"
     elif numeric_tier == 27:
-        return "Ruby II"
+        return "Ruby IV"
     elif numeric_tier == 28:
         return "Ruby III"
     elif numeric_tier == 29:
-        return "Ruby IV"
+        return "Ruby II"
     elif numeric_tier == 30:
-        return "Ruby V"
+        return "Ruby I"
     else:
         return "MASTER"
 
@@ -236,7 +236,7 @@ for user_id, entries in update_id.items():
                 "문제수": {
                     "number": total_problems
                 },
-                "최고난도 문제 점수": {
+                "최고난도 문제 점수 합": {
                     "number": top10_sum
                 },
                 "최장 스트릭": {
