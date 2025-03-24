@@ -48,7 +48,7 @@ try:
     login_button = driver.find_element(By.CSS_SELECTOR, "#submit_button")
     login_button.click()
 
-    time.sleep(2)
+    time.sleep(20)
 
     driver.get("https://www.acmicpc.net/status?group_id=23106")
 

@@ -16,15 +16,15 @@ def map_tier(numeric_tier):
     elif numeric_tier == 5:
         return "Bronze V"
     elif numeric_tier == 6:
-        return "Sliver I"
+        return "Silver I"
     elif numeric_tier == 7:
-        return "Sliver II"
+        return "Silver II"
     elif numeric_tier == 8:
-        return "Sliver III"
+        return "Silver III"
     elif numeric_tier == 9:
-        return "Sliver IV"
+        return "Silver IV"
     elif numeric_tier == 10:
-        return "Sliver V"
+        return "Silver V"
     elif numeric_tier == 11:
         return "Gold I"
     elif numeric_tier == 12:
@@ -34,7 +34,7 @@ def map_tier(numeric_tier):
     elif numeric_tier == 14:
         return "Gold IV"
     elif numeric_tier == 15:
-        return "Golde V"
+        return "Gold V"
     elif numeric_tier == 16:
         return "Platinum I"
     elif numeric_tier == 17:
