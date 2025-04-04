@@ -1,0 +1,44 @@
+{
+    "start_tier": 0,
+    "curr_tier": 0,
+    "day": [
+        {
+            "date": "2025-03-31",
+            "problems": [
+                {
+                    "problem_id": "25314",
+                    "difficulty": "1"
+                },
+                {
+                    "problem_id": "1000",
+                    "difficulty": "1"
+                }
+            ]
+        },
+        {
+            "date": "2025-04-01",
+            "problems": [
+                {
+                    "problem_id": "1001",
+                    "difficulty": "1"
+                }
+            ]
+        }
+    ],
+    "top10": [
+        {
+            "problem_id": "25314",
+            "difficulty": "1"
+        },
+        {
+            "problem_id": "1000",
+            "difficulty": "1"
+        },
+        {
+            "problem_id": "1001",
+            "difficulty": "1"
+        }
+    ],
+    "longest_streak": 2,
+    "current_streak": 2
+}

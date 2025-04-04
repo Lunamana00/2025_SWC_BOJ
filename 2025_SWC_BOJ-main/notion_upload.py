@@ -66,7 +66,7 @@ def map_tier(numeric_tier):
     elif numeric_tier == 30:
         return "Ruby I"
     else:
-        return "MASTER"
+        return "Unranked"
 
 # 1. 기본 설정 및 파일 읽기
 with open('./DB/notionAPIkey.txt', "r", encoding="utf-8") as file:
@@ -280,60 +280,59 @@ for user_id, entries in update_id.items():
 
 
     # 4-2. 개인 문제 리더보드 업데이트 (CSV 기반 Upsert)
+    # CSV에서 읽어온 새 문제들만 대상으로 업로드
     personal_db_id = db_mapping.get(user_id)
     if not personal_db_id:
         print(f"{user_id}에 해당하는 개인 DB ID가 없습니다.")
         continue
 
-    for day_entry in user_data["day"]:
-        date_str = day_entry["date"]
-        for prob in day_entry["problems"]:
-            problem_id = prob["problem_id"]
-            difficulty = prob["difficulty"]
-            try:
-                difficulty_num = int(difficulty)
-            except ValueError:
-                difficulty_num = 0
+    for entry in entries:
+        date_str = entry["date"]
+        problem_id = entry["problem"]
+        try:
+            difficulty_num = int(entry["score"])
+        except ValueError:
+            difficulty_num = 0
 
-            # 복합 필터: 날짜와 문제(Title) 모두 일치하는지 확인
-            filter_payload = {
-                "filter": {
-                    "and": [
-                        {"property": "날짜", "date": {"equals": date_str}},
-                        {"property": "문제", "title": {"equals": problem_id}}
-                    ]
-                }
+        # 날짜와 문제를 기준으로 해당 기록이 이미 있는지 확인
+        filter_payload = {
+            "filter": {
+                "and": [
+                    {"property": "날짜", "date": {"equals": date_str}},
+                    {"property": "문제", "title": {"equals": problem_id}}
+                ]
             }
-            query_url = f"https://api.notion.com/v1/databases/{personal_db_id}/query"
-            query_resp = requests.post(query_url, headers=notion_headers, json=filter_payload)
-            new_page_data = {
-                "parent": {"database_id": personal_db_id},
-                "properties": {
-                    "날짜": {"date": {"start": date_str}},
-                    "문제": {"title": [{"type": "text", "text": {"content": problem_id}}]},
-                    "점수": {"number": difficulty_num}
-                }
+        }
+        query_url = f"https://api.notion.com/v1/databases/{personal_db_id}/query"
+        query_resp = requests.post(query_url, headers=notion_headers, json=filter_payload)
+        new_page_data = {
+            "parent": {"database_id": personal_db_id},
+            "properties": {
+                "날짜": {"date": {"start": date_str}},
+                "문제": {"title": [{"type": "text", "text": {"content": problem_id}}]},
+                "점수": {"number": difficulty_num}
             }
-            if query_resp.status_code == 200:
-                results = query_resp.json().get("results", [])
-                if results:
-                    # 업데이트
-                    page_id = results[0]["id"]
-                    update_url = f"https://api.notion.com/v1/pages/{page_id}"
-                    up_resp = requests.patch(update_url, headers=notion_headers, json=new_page_data)
-                    if up_resp.status_code == 200:
-                        print(f"[{user_id}] 개인 DB: {problem_id} 업데이트 완료!")
-                    else:
-                        print(f"[{user_id}] 개인 DB 업데이트 실패: {up_resp.status_code}")
-                        print(up_resp.text)
+        }
+        if query_resp.status_code == 200:
+            results = query_resp.json().get("results", [])
+            if results:
+                # 기존에 기록이 있다면 업데이트 (또는 필요에 따라 건너뛸 수 있음)
+                page_id = results[0]["id"]
+                update_url = f"https://api.notion.com/v1/pages/{page_id}"
+                up_resp = requests.patch(update_url, headers=notion_headers, json=new_page_data)
+                if up_resp.status_code == 200:
+                    print(f"[{user_id}] 개인 DB: {problem_id} 업데이트 완료!")
                 else:
-                    # 생성
-                    create_url = "https://api.notion.com/v1/pages"
-                    cr_resp = requests.post(create_url, headers=notion_headers, json=new_page_data)
-                    if cr_resp.status_code == 200:
-                        print(f"[{user_id}] 개인 DB: {problem_id} 생성 완료!")
-                    else:
-                        print(f"[{user_id}] 개인 DB 생성 실패: {cr_resp.status_code}")
-                        print(cr_resp.text)
+                    print(f"[{user_id}] 개인 DB 업데이트 실패: {up_resp.status_code}")
+                    print(up_resp.text)
             else:
-                print(f"[{user_id}] 개인 DB 쿼리 실패: {query_resp.status_code}")
+                # 새 문제라면 생성
+                create_url = "https://api.notion.com/v1/pages"
+                cr_resp = requests.post(create_url, headers=notion_headers, json=new_page_data)
+                if cr_resp.status_code == 200:
+                    print(f"[{user_id}] 개인 DB: {problem_id} 생성 완료!")
+                else:
+                    print(f"[{user_id}] 개인 DB 생성 실패: {cr_resp.status_code}")
+                    print(cr_resp.text)
+        else:
+            print(f"[{user_id}] 개인 DB 쿼리 실패: {query_resp.status_code}")

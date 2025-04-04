@@ -1,0 +1,283 @@
+{
+    "start_tier": 27,
+    "curr_tier": 27,
+    "day": [
+        {
+            "date": "2025-03-24",
+            "problems": [
+                {
+                    "problem_id": "26906",
+                    "difficulty": "3"
+                },
+                {
+                    "problem_id": "3020",
+                    "difficulty": "11"
+                },
+                {
+                    "problem_id": "33577",
+                    "difficulty": "14"
+                },
+                {
+                    "problem_id": "9663",
+                    "difficulty": "12"
+                },
+                {
+                    "problem_id": "11660",
+                    "difficulty": "10"
+                },
+                {
+                    "problem_id": "11659",
+                    "difficulty": "8"
+                },
+                {
+                    "problem_id": "11399",
+                    "difficulty": "7"
+                },
+                {
+                    "problem_id": "2839",
+                    "difficulty": "7"
+                },
+                {
+                    "problem_id": "2742",
+                    "difficulty": "2"
+                }
+            ]
+        },
+        {
+            "date": "2025-03-25",
+            "problems": [
+                {
+                    "problem_id": "33673",
+                    "difficulty": "19"
+                },
+                {
+                    "problem_id": "33672",
+                    "difficulty": "21"
+                },
+                {
+                    "problem_id": "33660",
+                    "difficulty": "16"
+                },
+                {
+                    "problem_id": "33656",
+                    "difficulty": "9"
+                },
+                {
+                    "problem_id": "33655",
+                    "difficulty": "7"
+                }
+            ]
+        },
+        {
+            "date": "2025-03-26",
+            "problems": [
+                {
+                    "problem_id": "33155",
+                    "difficulty": "19"
+                },
+                {
+                    "problem_id": "33158",
+                    "difficulty": "18"
+                }
+            ]
+        },
+        {
+            "date": "2025-03-28",
+            "problems": [
+                {
+                    "problem_id": "33651",
+                    "difficulty": "2"
+                },
+                {
+                    "problem_id": "23577",
+                    "difficulty": "19"
+                },
+                {
+                    "problem_id": "23571",
+                    "difficulty": "18"
+                },
+                {
+                    "problem_id": "23572",
+                    "difficulty": "19"
+                },
+                {
+                    "problem_id": "23568",
+                    "difficulty": "6"
+                }
+            ]
+        },
+        {
+            "date": "2025-03-31",
+            "problems": [
+                {
+                    "problem_id": "17493",
+                    "difficulty": "18"
+                }
+            ]
+        },
+        {
+            "date": "2025-04-01",
+            "problems": [
+                {
+                    "problem_id": "33689",
+                    "difficulty": "2"
+                },
+                {
+                    "problem_id": "33701",
+                    "difficulty": "2"
+                },
+                {
+                    "problem_id": "5565",
+                    "difficulty": "2"
+                }
+            ]
+        },
+        {
+            "date": "2025-04-03",
+            "problems": [
+                {
+                    "problem_id": "33473",
+                    "difficulty": "26"
+                },
+                {
+                    "problem_id": "11816",
+                    "difficulty": "4"
+                },
+                {
+                    "problem_id": "11531",
+                    "difficulty": "4"
+                }
+            ]
+        },
+        {
+            "date": "2025-04-02",
+            "problems": [
+                {
+                    "problem_id": "18156",
+                    "difficulty": "5"
+                },
+                {
+                    "problem_id": "21191",
+                    "difficulty": "5"
+                },
+                {
+                    "problem_id": "1110",
+                    "difficulty": "5"
+                },
+                {
+                    "problem_id": "11116",
+                    "difficulty": "6"
+                },
+                {
+                    "problem_id": "11112",
+                    "difficulty": "15"
+                },
+                {
+                    "problem_id": "1111",
+                    "difficulty": "13"
+                },
+                {
+                    "problem_id": "11117",
+                    "difficulty": "4"
+                },
+                {
+                    "problem_id": "11113",
+                    "difficulty": "4"
+                },
+                {
+                    "problem_id": "11104",
+                    "difficulty": "4"
+                },
+                {
+                    "problem_id": "11091",
+                    "difficulty": "4"
+                },
+                {
+                    "problem_id": "15151",
+                    "difficulty": "3"
+                },
+                {
+                    "problem_id": "11721",
+                    "difficulty": "3"
+                },
+                {
+                    "problem_id": "11176",
+                    "difficulty": "3"
+                },
+                {
+                    "problem_id": "11161",
+                    "difficulty": "3"
+                },
+                {
+                    "problem_id": "11719",
+                    "difficulty": "3"
+                },
+                {
+                    "problem_id": "11134",
+                    "difficulty": "3"
+                },
+                {
+                    "problem_id": "11131",
+                    "difficulty": "3"
+                },
+                {
+                    "problem_id": "11109",
+                    "difficulty": "3"
+                }
+            ]
+        },
+        {
+            "date": "2025-04-04",
+            "problems": [
+                {
+                    "problem_id": "23566",
+                    "difficulty": "23"
+                }
+            ]
+        }
+    ],
+    "top10": [
+        {
+            "problem_id": "23566",
+            "difficulty": "23"
+        },
+        {
+            "problem_id": "23572",
+            "difficulty": "19"
+        },
+        {
+            "problem_id": "33473",
+            "difficulty": "26"
+        },
+        {
+            "problem_id": "17493",
+            "difficulty": "18"
+        },
+        {
+            "problem_id": "23571",
+            "difficulty": "18"
+        },
+        {
+            "problem_id": "33158",
+            "difficulty": "18"
+        },
+        {
+            "problem_id": "23577",
+            "difficulty": "19"
+        },
+        {
+            "problem_id": "33155",
+            "difficulty": "19"
+        },
+        {
+            "problem_id": "33672",
+            "difficulty": "21"
+        },
+        {
+            "problem_id": "33673",
+            "difficulty": "19"
+        }
+    ],
+    "longest_streak": 5,
+    "current_streak": 5
+}
